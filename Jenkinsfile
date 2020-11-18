@@ -37,11 +37,21 @@ pipeline {
 			}
 	  	}
 		// Testing integration of two or more units/modules combined for performing tasks (Web)
-		stage('Integration Test (web)') {
-			steps {
-				echo "Integration Test1"
-
-			}
+		stages('Integration Test (web)') {
+                stage('Parallel In Sequential') {
+                    parallel {
+                        stage('In Parallel 1') {
+                            steps {
+                                echo "In Parallel 1"
+                            }
+                        }
+                        stage('In Parallel 2') {
+                            steps {
+                                echo "In Parallel 2"
+                            }
+                        }
+                    }
+                }
 	  	}
 		stage('Build Android') {
 			steps {
