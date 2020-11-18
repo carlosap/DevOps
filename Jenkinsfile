@@ -39,12 +39,17 @@ pipeline {
 		// Testing integration of two or more units/modules combined for performing tasks (Web)
 		stage('Integration Test (web)') {
             parallel {
-                stage('In Parallel 1') {
+                stage('WEBAPP GUEST - ON_SHIP_AUTH') {
                     steps {
                         echo "In Parallel 1"
                         }
                     }
-                    stage('In Parallel 2') {
+                    stage('NATIVE GUEST - ON_SHIP_AUTH') {
+                        steps {
+                            echo "In Parallel 2"
+                        }
+                    }
+					stage('NATIVE GUEST - PRE_CRUISE_AUTH') {
                         steps {
                             echo "In Parallel 2"
                         }
@@ -59,9 +64,23 @@ pipeline {
 	  	}
 		//Testing the behavior of the application as per the requirement.
 	 	stage('Functional Test (native)') {
-			steps {
-				echo "appeium"
-			}
+            parallel {
+                stage('WEBAPP GUEST - ON_SHIP_AUTH') {
+                    steps {
+                        echo "In Parallel 1"
+                        }
+                    }
+                    stage('NATIVE GUEST - ON_SHIP_AUTH') {
+                        steps {
+                            echo "In Parallel 2"
+                        }
+                    }
+					stage('NATIVE GUEST - PRE_CRUISE_AUTH') {
+                        steps {
+                            echo "In Parallel 2"
+                        }
+                    }
+            }
 	  	}
 	 	stage('Deploy Artifact') {
 			steps {
