@@ -8,7 +8,7 @@ pipeline {
 			steps {
 				// "node --version"
 				//sh "mvn --version"
-				echo "$PATH"
+				echo "Path - $PATH"
 				echo "Build Number - $env.BUILD_NUMBER"
 				echo "Build Tag - $env.BUILD_TAG"
 				echo "Build URL - $env.BUILD_URL"
