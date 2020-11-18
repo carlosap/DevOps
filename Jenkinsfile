@@ -14,27 +14,54 @@ pipeline {
 				echo "Build URL - $env.BUILD_URL"
 			}
 	  	}
+		stage('Yarn') {
+			steps {
+				echo "Yarn1"
+
+			}
+	  	}
+		stage('Code Lint') {
+			steps {
+				echo "Lint1"
+			}
+	  	}
 		stage('Code Quality') {
 			steps {
-				echo "QA1"
-				echo "QA2"
-				echo "QA3"
+				echo "Code Quality"
 			}
 	  	}
-		stage('Test') {
+		//Testing smallest units or modules individually.
+		stage('Unit Test') {
 			steps {
-				echo "Test1"
-				echo "Test2"
-				echo "Test3"
+				echo "Unit Test"
 			}
 	  	}
-		stage('Integration Test') {
+		// Testing integration of two or more units/modules combined for performing tasks (Web)
+		stage('Integration Test (web)') {
 			steps {
 				echo "Integration Test1"
-				echo "Integration Test2"
-				echo "Integration Test3"
+
 			}
 	  	}
+		stage('Build Android') {
+			steps {
+				echo "build the apk"
+				echo "build the ios"
+			}
+	  	}
+		//Testing the behavior of the application as per the requirement.
+	 	stage('Functional Test (native)') {
+			steps {
+				echo "appeium"
+			}
+	  	}
+	 	stage('Deploy Artifact') {
+			steps {
+				echo "jfrog"
+				echo "airWatch"
+			}
+	  	}
+
 	} 
 	post {
 		always {
