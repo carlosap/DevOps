@@ -9,6 +9,13 @@ pipeline {
 				echo "build step3"
 			}
 	  	}
+		stage('Code Quality') {
+			steps {
+				echo "QA1"
+				echo "QA2"
+				echo "QA3"
+			}
+	  	}
 		stage('Test') {
 			steps {
 				echo "Test1"
