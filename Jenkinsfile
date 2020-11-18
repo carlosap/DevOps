@@ -39,17 +39,17 @@ pipeline {
 		// Testing integration of two or more units/modules combined for performing tasks (Web)
 		stage('Integration Test (web)') {
             parallel {
-                stage('WEBAPP GUEST - ON_SHIP_AUTH') {
+                stage('WEBAPP GUEST - ON_SHIP_AUTH (MAC Safari 14)') {
                     steps {
                         echo "In Parallel 1"
                         }
                     }
-                    stage('NATIVE GUEST - ON_SHIP_AUTH') {
+                    stage('WEBAPP GUEST - ON_SHIP_AUTH (Windows 10 Chrome 86)') {
                         steps {
                             echo "In Parallel 2"
                         }
                     }
-					stage('NATIVE GUEST - PRE_CRUISE_AUTH') {
+					stage('WEBAPP GUEST - ON_SHIP_AUTH (SHIP EUDM)') {
                         steps {
                             echo "In Parallel 2"
                         }
