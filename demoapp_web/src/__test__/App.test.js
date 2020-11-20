@@ -1,8 +1,7 @@
-import React from 'react';
-import ReactDOM from 'react-dom';
-import App from '../App';
+test.only('this will be the only test that runs', () => {
+  expect(true).toBe(true);
+});
 
-it('renders without crashing', () => {
-  const div = document.createElement('div');
-  ReactDOM.render(<App />, div);
+test('this test will not run', () => {
+  expect('A').toBe('A');
 });

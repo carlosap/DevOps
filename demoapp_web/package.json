@@ -16,7 +16,7 @@
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",
-    "test": "react-scripts test",
+    "test": "jest --coverage --coverageDirectory=output/coverage/",
     "eject": "react-scripts eject"
   },
   "eslintConfig": {
@@ -33,5 +33,18 @@
       "last 1 firefox version",
       "last 1 safari version"
     ]
+  },
+  "jest": {
+    "coverageReporters": [
+      "text",
+      "cobertura"
+    ],
+    "transformIgnorePatterns": [
+      "node_modules/(?!(jest-))/"
+    ]
+  },
+  "devDependencies": {
+    "jest-junit": "^12.0.0",
+    "ts-jest": "^26.4.4"
   }
 }
