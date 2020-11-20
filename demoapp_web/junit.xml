@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuites name="jest tests" tests="5" failures="0" errors="0" time="1.526">
+  <testsuite name="undefined" errors="0" failures="0" skipped="1" timestamp="2020-11-20T04:12:01" time="0.682" tests="2">
+    <testcase classname=" this will be the only test that runs" name=" this will be the only test that runs" time="0.001">
+    </testcase>
+    <testcase classname=" this test will not run" name=" this test will not run" time="0">
+      <skipped/>
+    </testcase>
+  </testsuite>
+  <testsuite name="addition" errors="0" failures="0" skipped="0" timestamp="2020-11-20T04:12:02" time="0.067" tests="1">
+    <testcase classname="addition positive numbers should add up" name="addition positive numbers should add up" time="0">
+    </testcase>
+  </testsuite>
+  <testsuite name="undefined" errors="0" failures="0" skipped="1" timestamp="2020-11-20T04:12:02" time="0.061" tests="2">
+    <testcase classname=" this will be the only test that runs" name=" this will be the only test that runs" time="0.001">
+    </testcase>
+    <testcase classname=" this test will not run" name=" this test will not run" time="0">
+      <skipped/>
+    </testcase>
+  </testsuite>
+</testsuites>
